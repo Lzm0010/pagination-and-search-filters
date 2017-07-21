@@ -44,6 +44,7 @@ function removePageLinks(){
 
 
 function resetStudents(){
+  removePageLinks();
   studentsNodeList.forEach((student) => {
     removeHidden(student);
   });
