@@ -51,6 +51,9 @@ function resetStudents(){
   appendPageLinks(studentsNodeList);
   //remove not found div
   removeNotFound();
+
+  //reset input value to nothing
+  let inputValue = document.querySelector('input').value = "";
 }
 
 
@@ -191,7 +194,7 @@ function searchList(){
     let email = student.children[0].children[2].innerHTML;
 
     //check if part of input value matches name or email using indexOf
-    if (name.indexOf(inputValue) > -1 || email.indexOf(inputValue) > -1) {
+    if ((name.indexOf(inputValue) > -1 && inputValue.length > 0)|| (email.indexOf(inputValue) > -1 && inputValue.length > 0)) {
       //add to matched array
       matched.push(student);
     } else {
